@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+<body>
+    <h1>Tabuada</h1>
+    <p>Infomre um número para exibir sua tabuada: <input type="text" id="inNum"></p>
+    <button type="button" id="btn">Mostar</button>
+    <div id="outTabuada"></div>
+    <script>
+        function tabuada(){
+            let inNum = document.querySelector("#inNum");
+            let outTabuada = document.querySelector("#outTabuada");
+            let num = Number(inNum.value);
+
+            let tabuada = "";
+
+            if(isNaN(num) || num < 1){
+                alert("Insira um número positivo!!")
+            } else{
+                for(let i = 1; i<=10; i++){
+                    tabuada += `${num} x ${i} = ${num * i} <br>`
+                }
+                outTabuada.innerHTML = tabuada;
+            }
+        }
+        let botao = document.querySelector("#btn").addEventListener("click", tabuada);
+    </script>
+</body>
+</html>
